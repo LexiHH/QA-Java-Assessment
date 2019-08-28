@@ -128,7 +128,7 @@ public class Assessment {
 	       while(newletter < input.length()) {
 	           if (input.charAt(newletter) == input.charAt(index)) {
 	                   if(blocklength ==0)
-	                       blocklength = blocklength + 2;
+	                       blocklength +=2;
 	                   else blocklength++;
 	           }
 	           else blocklength = 0;
@@ -204,25 +204,25 @@ public class Assessment {
 	//largest("555 72 86 45 10") ==> 15
 	
 	public int largest(String arg1) {
-		 int newnumber = 1;
+		 int nextnumber = 1;
 	       int index = 0;
 	       int addition = Character.getNumericValue(arg1.charAt(index));
 	       int biggest = 0;
 	       //going through each number and seeing if the one before is also a number
 	       //if they are, add them together
-	       //if either are spaces, they'll move to the next place along and set the sum back to 0
+	       //if either are spaces, they'll move to the next place along and set the sum back to the value of the index number
 	       //when two numbers are added, this is stored as the biggest addition and is only overridden once a bigger addition is found
-	       while(newnumber < arg1.length()) {
-	           while(Character.getNumericValue(arg1.charAt(newnumber)) == -1 || Character.getNumericValue(arg1.charAt(index)) == -1) {
+	       while(nextnumber < arg1.length()) {
+	           while(Character.getNumericValue(arg1.charAt(nextnumber)) == -1 || Character.getNumericValue(arg1.charAt(index)) == -1) {
 	               index++;
-	               newnumber++;
+	               nextnumber++;
 	               addition = Character.getNumericValue(arg1.charAt(index));
 	           }
-	           addition += Character.getNumericValue(arg1.charAt(newnumber));
+	           addition += Character.getNumericValue(arg1.charAt(nextnumber));
 	           if(addition > biggest)
 	               biggest = addition;
 	           index++;
-	           newnumber++;
+	           nextnumber++;
 	       }
 	     return biggest;
 	}
